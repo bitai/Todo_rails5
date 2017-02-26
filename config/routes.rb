@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :users
+  root "home#index"
   resources :tags
   get 'items/new/:id', to: 'items#new', as: 'new_item'
   get 'list/:id', to: 'items#index', as: 'items'
